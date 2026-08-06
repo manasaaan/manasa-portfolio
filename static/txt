@@ -1,0 +1,35 @@
+.header {
+    text-align: center;
+    padding: 15px 20px;   
+    border-bottom: 1px solid #ddd;
+    background-color: #F1E8FF;
+    backdrop-filter: blur(6px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+ <header class="header">
+        <h1>Welcome To My Portfolio!!</h1>
+
+        <div class="typing-container">
+            <h1 class="typing-title">I Am Manasa N</h1>
+            <h2 class="typing-text"></h2>
+        </div>
+
+    
+
+        <!-- NAVBAR -->
+        <nav class="navbar">
+            <ul type="none">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#interests">Interests</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+  

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manasa N | Portfolio</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- Flash Message -->
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class="flash">{{ messages[0] }}</div>
+    {% endif %}
+    {% endwith %}
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-top">
+
+
+            <div class="typing-container">
+                <h1 class="typing-title">
+                    <h1>Welcome! I'm Manasa N</h1>
+                    <h2 class="typing-text"></h2>
+            </div>
+
+        </div>
+
+        <nav class="navbar">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#interests">Interests</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+
+
+
+    <!-- ABOUT SECTION -->
+    <section class="section reveal" id="about">
+        <h2>About Me</h2>
+
+        <div class="about-wrapper">
+
+            <div class="photo-gradient-ring">
+                <img src="{{ url_for('static', filename='photo.jpg') }}" class="profile-photo">
+            </div>
+
+            <div class="about-text">
+                <p>
+                    Final-year Electronics and Communication Engineering student seeking an opportunity to apply technical knowledge, 
+                    analytical and problem-solving skills, contribute to innovative projects, and continuously learn and grow in a professional 
+                    environment. 
+                    <br><br>
+                    I am eager to connect, learn, and collaborate on opportunities that allow me to grow as an engineer
+                    while
+                    contributing to impactful projects.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="resume-container">
+            <h3>Resume</h3>
+            <a href="{{ url_for('static', filename='resume.pdf') }}" download class="resume-btn">
+                Download Resume
+            </a>
+        </div>
+    </section>
+
+
+    <section class="section reveal" id="skills">
+    <h2>Skills</h2>
+
+    <div class="skills-grid">
+        <div class="skill-card">🐍 Python</div>
+        <div class="skill-card">🌐 HTML</div>
+        <div class="skill-card">🎨 CSS</div>
+        <div class="skill-card">⚡ Flask</div>
+        <div class="skill-card">📡 IoT</div>
+        <div class="skill-card">💻 Embedded Systems</div>
+        <div class="skill-card">🤖 AI / ML Basics</div>
+        <div class="skill-card">🔧 Git & GitHub</div>
+    </div>
+</section>
+
+
+    </section>
+
+    <!-- EDUCATION SECTION -->
+    <section class="section reveal" id="education">
+        <h2>Education</h2>
+
+        <div class="edu-row">
+
+            <div class="edu-card">
+                <h3>Sri Venkateshwara College of Engineering, Bengaluru</h3>
+                <p>B.E – ECE (Pursuing), CGPA till 6th sem – <b>8.2</b></p>
+            </div>
+
+            
+
+            <div class="edu-card">
+                <h3>Government PU College, Yelahanka</h3>
+                <p>PU – <b>90%</b></p>
+            </div>
+
+            <div class="edu-card">
+                <h3>Sterling English School, Devanahalli</h3>
+                <p>SSLC – <b>90%</b></p>
+            </div>
+            
+
+        </div>
+    </section>
+
+<!-- INTERESTS SECTION -->
+<section class="section reveal" id="interests">
+    <h2>Interests</h2>
+
+
+
+    <div class="interest-grid">
+
+        <div class="interest-card">
+            🌐 IoT Systems
+        </div>
+
+        <div class="interest-card">
+            🤖 AI Applications
+        </div>
+
+        <div class="interest-card">
+            ⚡ Smart Embedded Devices
+        </div>
+
+        <div class="interest-card">
+            🔬 VLSI Design
+        </div>
+
+        <div class="interest-card">
+            💻 Web Development
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- PROJECTS SECTION -->
+    <section class="section reveal" id="projects">
+        <h2>Projects</h2>
+
+        
+
+        <div class="project-card">
+            <h3>Footstep Power Generation using Piezoelectric Sensors</h3>
+            <p>This project harvests renewable energy from
+                human footsteps using piezoelectric sensors that convert mechanical pressure into electrical energy. The
+                generated power is rectified, stored, and used to run small devices. It offers an eco-friendly solution
+                for generating electricity in high-footfall areas like malls and railway stations.
+            </p>
+           <video src="{{ url_for('static', filename='piezo.mp4') }}" 
+       autoplay 
+       muted 
+       loop 
+       playsinline
+       class="project-video">
+    </video>
+        </div>
+
+        <div class="project-card">
+            <h3>IoT-Enabled Short-Circuit Protection and Predictive Maintenance for EV Charging Stations</h3>
+            <p>This project presents a smart EV charging station safety system using ESP32 and multiple sensors to
+                detect overcurrent, short circuits, and overheating in real time. Faults are isolated within 14 ms using
+                a relay, while sensor data is uploaded to the cloud for monitoring and predictive maintenance. The
+                system achieves 94.7% accuracy, supports solar integration, and enhances the reliability and
+                sustainability of EV charging—earning the Best Paper Presenter award at SSITCON-2025.
+
+            </p>
+            <img src="{{ url_for('static', filename='iot.jpg') }}" alt="IoT EV Charging Station" class="project-image">
+        </div>
+
+        <div class="project-card">
+            <h3>AI-Powered Robotic System for Plastic Detection</h3>
+            <p>
+                Designed and developed an AI-powered robotic system that detects and removes plastic carry bags from public waste 
+                using computer vision and automation, improving waste segregation efficiency. Developed under the MeitY Digital 
+                India RISC-V Grand Challenge through Krutam Yantra LLP. 
+            </p>
+            <video class="project-video" autoplay muted loop>
+    <source src="{{ url_for('static', filename='robo.mp4') }}" type="video/mp4">
+    Your browser does not support video playback.
+</video>
+</video>
+
+        </div>
+    </section>
+
+    <!-- ACHIEVEMENTS SECTION -->
+    <section class="section reveal" id="achievements">
+        <h2>Achievements</h2>
+
+        <div class="achievements-grid">
+
+            <!-- ACHIEVEMENT 1 -->
+            <div class="achievement-block">
+                <h3>Best Paper Presenter – SSITCON 2025</h3>
+                <p>Presented project on AI-based EV Charging Station Safety.</p>
+                <img src="{{ url_for('static', filename='cert1.jpg') }}" class="cert-thumb" alt="Certificate 1">
+            </div>
+
+            <!-- ACHIEVEMENT 2 -->
+            <div class="achievement-block">
+                <h3>Paryavaran Ramayana 2025</h3>
+                <p>Presented work on sustainable energy solutions.</p>
+                <img src="{{ url_for('static', filename='cert2.jpg') }}" class="cert-thumb" alt="Certificate 2">
+            </div>
+
+            <!-- ACHIEVEMENT 3 -->
+            <div class="achievement-block">
+                <h3>MeitY Project Contributor</h3>
+                <p>Contributing to Govt. funded project under MeitY.</p>
+                <img src="{{ url_for('static', filename='cert3.jpg') }}" class="cert-thumb" alt="Certificate 3">
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+    <!-- CONTACT SECTION -->
+    <section class="section reveal" id="contact">
+        <h2>Let’s Connect</h2>
+        <p>If you'd like to get in touch, feel free to reach out through this contact-card.</p>
+
+        <div class="contact-grid">
+
+
+
+        </div>
+
+        <!-- MESSAGE FORM -->
+        <div class="contact-card form-wrapper">
+            <h3>Send Me a Message</h3>
+
+            <form action="/contact" method="POST" class="contact-form">
+
+                <label>Your Name</label>
+                <input type="text" name="name" required>
+
+                <label>Your Email</label>
+                <input type="email" name="email" required>
+
+                <label>Your Message</label>
+                <textarea name="message" rows="4" required></textarea>
+
+                <button type="submit" class="form-btn">Send Message</button>
+
+            </form>
+        </div>
+    </section>
+
+    <!-- SCRIPT -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+    <footer class="footer">
+        <p>Thank you for visiting my portfolio ♥</p>
+
+        <div class="footer-icons">
+            <a href="mailto:manasanarayanaswami34@gmail.com" target="_blank">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/manasa-n-483139292" target="_blank">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+
+            <a href="https://github.com/manasaaan" target="_blank">
+                <i class="fa-brands fa-github"></i>
+            </a>
+        </div>
+
+        <p>© 2025 <b>Manasa N</b></p>
+    </footer>
+
+
+</body>
+
+</html>
